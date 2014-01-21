@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TipCalcuateActivity" >
+
+    <RelativeLayout
+        android:id="@+id/tcRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/tcAmountInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tcRelativeLayout"
+        android:layout_below="@+id/tcRelativeLayout"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="@string/enterAmount" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btnTenPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tcAmountInput"
+        android:layout_marginTop="64dp"
+        android:layout_toRightOf="@+id/tcRelativeLayout"
+        android:onClick="displayTipTenPrcnt"
+        android:text="@string/tenPercent" />
+
+    <Button
+        android:id="@+id/btnFifteenPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnTenPercent"
+        android:layout_alignBottom="@+id/btnTenPercent"
+        android:layout_toRightOf="@+id/btnTenPercent"
+        android:onClick="displayTipFifteenPrcnt"
+        android:text="@string/fifteenPercent" />
+
+    <Button
+        android:id="@+id/btnTwentyPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnFifteenPercent"
+        android:layout_alignBottom="@+id/btnFifteenPercent"
+        android:layout_toRightOf="@+id/btnFifteenPercent"
+        android:onClick="displayTipTwentyPrcnt"
+        android:text="@string/twentyPercent" />
+
+    <TextView
+        android:id="@+id/tvDisplayTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tcAmountInput"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="90dp"
+        android:text="@string/emptyString"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/evCustomTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnTenPercent"
+        android:layout_alignRight="@+id/btnTenPercent"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:maxLength="3" />
+
+    <TextView
+        android:id="@+id/tvPrcntSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/evCustomTip"
+        android:layout_alignBottom="@+id/evCustomTip"
+        android:layout_toRightOf="@+id/evCustomTip"
+        android:text="@string/prcntSign"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/evCustomTip"
+        android:layout_toRightOf="@+id/tvPrcntSign"
+        android:onClick="displayCustomPrcnt"
+        android:text="@string/customTip" />
+
+</RelativeLayout>
